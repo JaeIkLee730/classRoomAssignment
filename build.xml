@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<project default="build" basedir=".">
+
+<property name="src" value="./src"/>
+<property name="bin" value="./bin"/>
+<property name="lib" value="./lib"/>
+<property name="doc" value="./doc"/>
+
+<target name="init">
+	<delete dir="${bin}"/>
+	<delete dir="./tmp"/>
+	<mkdir dir="${bin}"/>
+</target>
+
+
+<target name="build" depends="init">
+	<javac srcdir="${src}" destdir="${bin}" debug="on" optimize="off" deprecation="on" source="1.7"/>
+ </target>
+
+
+<target name="doc" depends="build" description="generate documentation">
+	<mkdir dir="${doc}"/>
+	<javadoc destdir="${doc}" packagenames="*.*" author="false" private="true" version="true" windowtitle="Simple Documentation">
+			<packageset dir="${src}" />
+	</javadoc>
+  </target>
+
+<target name="clean">
+	<delete dir="${bin}"/>
+	<delete dir="${doc}"/>
+</target>
+
+</project>

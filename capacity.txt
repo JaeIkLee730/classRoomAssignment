@@ -1,0 +1,22 @@
+Buildfile: /Users/IK/Project/HongLab/classRoomAssignment_Ver2/build.xml
+
+init:
+   [delete] Deleting directory /Users/IK/Project/HongLab/classRoomAssignment_Ver2/bin
+    [mkdir] Created dir: /Users/IK/Project/HongLab/classRoomAssignment_Ver2/bin
+
+build:
+    [javac] /Users/IK/Project/HongLab/classRoomAssignment_Ver2/build.xml:18: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 11 source files to /Users/IK/Project/HongLab/classRoomAssignment_Ver2/bin
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
+    [javac] /Users/IK/Project/HongLab/classRoomAssignment_Ver2/src/cr/evolution/Constraints.java:45: error: cannot find symbol
+    [javac]         } catch(IOException e){}
+    [javac]                 ^
+    [javac]   symbol:   class IOException
+    [javac]   location: class Constraints
+    [javac] /Users/IK/Project/HongLab/classRoomAssignment_Ver2/src/cr/main/Main.java:33: error: cannot find symbol
+    [javac] 			Constraints.setCapacity( args[5] ) ;
+    [javac] 			^
+    [javac]   symbol:   variable Constraints
+    [javac]   location: class Main
+    [javac] 2 errors
+    [javac] 1 warning
