@@ -3,14 +3,12 @@ package cr.enrollment ;
 import java.util.* ;
 import java.io.* ;
 import cr.main.* ;
+import cr.evolution.* ;
 
 public class CSList {
 
     // list of class sequences
     private ArrayList<CS> sequenceList= new ArrayList<CS>() ;
-    
-    // HashMap<course, class room>
-    private HashMap<String, Integer> courseToTime = new HashMap<String, Integer>() ;
     
     public CSList() { }
 
@@ -43,12 +41,13 @@ public class CSList {
             /*  Actually individual data is taken here 
                 length-1: except sudent ID   
                 split[0]: course code           */
-                
+            
+            // one line: course_code / class_time / ID 
             for( int k=1; k<split.length-1; k++ ) {
+                TreeSet<Integer> timeByCourse = new TreeSet<Integer>() ;
                 stuSq[i] = Parser.ATOI(split[k]) ;
                 cRoom.put( stuSq[i], RA.getAssignedRoom(split[0]) ) ;
                 timeToCourse.put( stuSq[i], split[0] ) ;
-                courseToTime.put( split[0], stuSq[i] ) ;
                 courseSet.add( split[0] ) ;
                 i++ ;
             }
@@ -84,12 +83,9 @@ public class CSList {
                     sortedStuSq[k] = temp[k] ;
                 sortedStuSq[i] = null ;
 
-
                 CS cs = new CS( sortedStuSq, cRoom, timeToCourse, courseSet ) ;
-                
                 // save transition info
                 cs.setDistance( ) ;
-
                 sequenceList.add(cs) ;
 
                 stuSq = new Integer[30] ;
@@ -97,9 +93,8 @@ public class CSList {
 
                 i = 0 ;
             }
-
         }
-
+        
         // closing Buffered Reader
         if( br != null) {
             try { br.close(); } catch(IOException e){}
@@ -119,10 +114,5 @@ public class CSList {
     }
     
     public ArrayList<CS> getSequenceList () { return sequenceList ; }
-
-    public HashMap<String, Integer> getCourseToTime() {
-        return courseToTime ;
-    }
-
 
 }

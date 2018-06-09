@@ -1,0 +1,17 @@
+Buildfile: /Users/IK/Project/HongLab/classRoomAssignment/build.xml
+
+init:
+   [delete] Deleting directory /Users/IK/Project/HongLab/classRoomAssignment/bin
+    [mkdir] Created dir: /Users/IK/Project/HongLab/classRoomAssignment/bin
+
+build:
+    [javac] /Users/IK/Project/HongLab/classRoomAssignment/build.xml:18: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 16 source files to /Users/IK/Project/HongLab/classRoomAssignment/bin
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
+    [javac] /Users/IK/Project/HongLab/classRoomAssignment/src/cr/evolution/Mutation.java:28: error: incompatible types: Iterator cannot be converted to ArrayList<String>
+    [javac]         ArrayList<String> sortedByCapacity = sortByCapacity(assignment).iterator();
+    [javac]                                                                                 ^
+    [javac] Note: /Users/IK/Project/HongLab/classRoomAssignment/src/cr/evolution/Mutation.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+    [javac] 1 error
+    [javac] 1 warning
